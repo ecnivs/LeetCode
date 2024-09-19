@@ -1,17 +1,15 @@
 # 13. Roman to Integer
-class Solution:
-    def romanToInt(self, s: str) -> int:
-        value = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        total = 0
-        prev_value = 0
+class Solution(object):
+     def romanToInt(self, s):
+        sum = 0
+        prevValue = 0
+        values = [0] * 256
+        values[ord('I')] = 1; values[ord('V')] = 5; values[ord('X')] = 10; values[ord('L')] = 50
+        values[ord('C')] = 100; values[ord('D')] = 500; values[ord('M')] = 1000
         
-        for char in s:
-            current_value = value[char]
-            if current_value > prev_value:
-                total += current_value - 2 * prev_value
-            else:
-                total += current_value
-            prev_value = current_value
-
-        return total
+        for c in s:
+            currentValue = values[ord(c)]
+            sum += (currentValue - 2 * prevValue) if (currentValue > prevValue) else currentValue
+            prevValue = currentValue
+        return sum
 
