@@ -1,5 +1,5 @@
 # LeetCode Solutions
-This repository is dedicated to LeetCode solutions. 
+This repository is dedicated to **LeetCode** solutions. 
 
 ## Languages
 * Java
