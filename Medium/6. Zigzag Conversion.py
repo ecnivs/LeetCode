@@ -12,5 +12,4 @@ class Solution:
             if row == 0 or row == numRows - 1:
                 direction *= -1
             row += direction
-
         return ''.join(rows)
