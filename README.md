@@ -1,7 +1,7 @@
 <h1 align="center">LeetCode</h1>
 <p align="center"><em>LeetCode solutions.</em></p>
 
-## Languages Used:
+## Languages
 - Python
 - Rust
 - Java
