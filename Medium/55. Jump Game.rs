@@ -1,19 +1,29 @@
 impl Solution {
     pub fn can_jump(nums: Vec<i32>) -> bool {
         let n = nums.len();
-        let mut i = 0;
+        let mut visited = vec![false; n];
+        let mut stack = vec![0];
 
-        while i < n {
-            if i + nums[i] as usize >= n - 1 {
+        while let Some(i) = stack.pop() {
+            if i >= n - 1 {
                 return true;
             }
-            if nums[i] == 0 {
-                return false;
+            if visited[i] {
+                continue;
             }
-            i += nums[i] as usize;
+            visited[i] = true;
+
+            let max_jump = nums[i] as usize;
+            for step in 1..=max_jump {
+                let next = i + step;
+                if next < n {
+                    stack.push(next);
+                } else {
+                    return true;
+                }
+            }
         }
 
         false
     }
 }
-
